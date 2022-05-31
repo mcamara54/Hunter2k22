@@ -61,21 +61,15 @@ struct hunter
     int side;
     int top;
     int waves;
-
     sfRenderWindow *window;
     sfWindow *win;
     sfVideoMode mode;
-
     sfVector2i mouse;
     sfVector2f pos_mouse;
-
     sfEvent event;
-
     sfView *cam;
-
     game_obj_t *m[3];
     game_obj_t *g[2];
-
     birds_t *b;
     sfClock *clock;
     sfTime time;
