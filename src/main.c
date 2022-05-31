@@ -32,6 +32,7 @@ static void window(hunt_t *g)
 
 int main(int ac, char **av)
 {
+    if (ac != 1 && av[1][0] == '-' && av[1][1] == 'h') return (1);
     hunt_t *g = malloc(sizeof(hunt_t));
     void (*p[]) (hunt_t *) = {variables, structures, window, NULL};
     for (int a = 0; *p[a]; a++) (*p[a])(g);

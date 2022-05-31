@@ -25,25 +25,7 @@ static void gsprites(hunt_t *g)
     (sfIntRect) {0, 0, 1920, 1080}, (sfVector2f) {1, 1});
     g->g[1] = create_obj("assets/canoon.png", (sfVector2f) {125, 700},
     (sfIntRect) {0, 0, 65, 60}, (sfVector2f) {3, 3});
-
     // Birds will be initialated Ingame at each wave
-}
-
-static void cursor(hunt_t *g)
-{
-
-}
-
-void waves_checker(hunt_t *g)
-{
-    g->sec = g->time.microseconds / 100000;
-    g->time = sfClock_getElapsedTime(g->clock);
-
-    if (waves_ended(g)) {
-        waves_clean(g);
-        g->waves += 1;
-        waves_init(g, g->waves / 2);
-    }
 }
 
 void gloop(hunt_t *g)
@@ -53,7 +35,6 @@ void gloop(hunt_t *g)
 
     while (sfRenderWindow_isOpen(g->window)) {
         g->mouse = sfMouse_getPositionRenderWindow(g->window);
-        cursor(g);
         while (sfRenderWindow_pollEvent(g->window, &g->event)) {
             ch_all(g);
         }

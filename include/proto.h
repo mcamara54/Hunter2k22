@@ -13,6 +13,7 @@ void ch_all(hunt_t *g);
 void dr_all(hunt_t *g);
 void de_all(hunt_t *g);
 void mv_all(hunt_t *g);
+void on_menu(hunt_t *g);
 
 struct class_object *create_obj(const char *path_to_spritesheet,
 sfVector2f pos, sfIntRect rect, sfVector2f scale);
