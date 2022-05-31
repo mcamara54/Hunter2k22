@@ -77,6 +77,9 @@ struct hunter
     game_obj_t *g[2];
 
     birds_t *b;
+    sfClock *clock;
+    sfTime time;
+    float sec;
 };
 typedef struct hunter hunt_t;
 

@@ -36,10 +36,13 @@ static void cursor(hunt_t *g)
 
 void waves_checker(hunt_t *g)
 {
+    g->sec = g->time.microseconds / 100000;
+    g->time = sfClock_getElapsedTime(g->clock);
+
     if (waves_ended(g)) {
         waves_clean(g);
         g->waves += 1;
-        waves_init(g, g->waves);
+        waves_init(g, g->waves / 2);
     }
 }
 

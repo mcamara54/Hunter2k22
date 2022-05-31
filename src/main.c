@@ -12,12 +12,15 @@ static void variables(hunt_t *g)
     srand(time(NULL));
     g->plan = MENU;
     g->waves = 1;
+    g->top = 1080;
+    g->side = 1920;
 }
 
 static void structures(hunt_t *g)
 {
     g->b = NULL;
     waves_init(g, g->waves);
+    g->clock = sfClock_create();
 }
 
 static void window(hunt_t *g)
